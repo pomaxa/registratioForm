@@ -1,0 +1,43 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+    {#{% use "" %}#}
+<div class="container">
+
+    <div class="page-header">
+        <h1>Registration form</h1>
+        <p class="lead">OR happening 2016</p>
+    </div>
+
+    <div class="row">
+        {#<div class="col-md-3">.col-md-3</div>#}
+        <div class="col-md-6">{{ form(form) }}</div>
+        <div class="col-md-6">
+
+            {#.col-md-3#}
+
+            <p>In order to ensure that our seminar will be the pleasant for all, we ask you carefully read, sign and
+            follow the rules of the seminar.</p>
+
+
+            <h3>Rules of the seminar:</h3>
+
+            <ol>
+                <li>The participant agrees to attend the seminar program</li>
+                <li>Any participant caught or abusing illegal drugs will be immediately dismissed from the program, at the expense of the participant</li>
+                <li>Any participant who violates ethical standards of conduct will be immediately dismissed from the program, at the expense of the participant</li>
+                <li>A cash deposit of 50 Euro will be given by each participant to the hotel upon arrival and check-in. The deposit is required for payment of any potential damages that may occur. The deposit will be returned if not damages occur.</li>
+            </ol>
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}
