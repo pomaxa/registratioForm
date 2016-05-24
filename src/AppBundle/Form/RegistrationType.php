@@ -20,29 +20,38 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName')
-            ->add('lastName')
-            ->add('email', EmailType::class)
+            ->add('firstName', null, ['label' => 'First name'])
+            ->add('lastName', null, ['label' => 'Last name'])
+            ->add('email', EmailType::class, ['label' => 'Email'])
             ->add('cellPhone')
-            ->add('country', CountryType::class, ['empty_data' => null, 'placeholder' => 'Select Your country',])
-            ->add('dob', BirthdayType::class)
-            ->add('dietary')
+            ->add('country', CountryType::class, [
+                'empty_data' => null,
+                'placeholder' => 'Select Your country',
+                'label' => 'Country of living'
+            ])
+            ->add('dob', BirthdayType::class, ['label' => 'Date of Birth'])
+            ->add('dietary', null, ['label' => 'Dietary requirements (kosher style food will be served. Please specify for any other dietary requirements)'])
             ->add('transportation', ChoiceType::class, [
                 'empty_data' => null,
                 'placeholder' => 'Select your transport',
                 'choices' => [
-                    'Bus' => 'Bus',
+                    'Organised bus' => 'Organised bus',
                     'Own car' => 'Own car'
                 ],
             ])
-            ->add('remarks')
+            ->add('remarks', null, ['label' => 'Remarks & Comments about accommodation'])
             ->add('knownFrom', ChoiceType::class, [
+                'label' => 'How did you hear about OR HAPPENING',
                 'choices' => [
-                    'x' => 'xx',
-                    'y' => 'yy',
+                    'Community' => 'Community',
+                    'Friends' => 'Friends',
+                    'Facebook' => 'Facebook',
+                    'Family' => 'Family',
+                    'Synagogue' => 'Synagogue',
+                    'Other' => 'Other',
                 ]
             ])
-            ->add('save', SubmitType::class, array('label' => 'Apply for event.'))
+            ->add('save', SubmitType::class, array('label' => 'Agree with terms & Apply for event'))
 
         ;
     }
